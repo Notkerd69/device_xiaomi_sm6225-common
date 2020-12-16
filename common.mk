@@ -508,6 +508,10 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.sensors.hal_trigger_ssr=false \
     persist.vendor.sensors.support_direct_channel=false
 
+# Shutdown
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.build.shutdown_timeout=2
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
