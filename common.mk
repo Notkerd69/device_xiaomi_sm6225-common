@@ -394,6 +394,9 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     Lawnchair \
     TrebuchetQuickStep
 
+# Kernel
+PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
+
 # Keylayout
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/keylayout/,$(TARGET_COPY_OUT_VENDOR)/usr/keylayout)
