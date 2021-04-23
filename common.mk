@@ -617,6 +617,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
     config.disable_rtt=true
 
+# WiFi Scan Interval (default = 15s)
+PRODUCT_PROPERTY_OVERRIDES += \
+    wifi.supplicant_scan_interval=600
+
 # WLAN
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.data.iwlan.enable=true \
