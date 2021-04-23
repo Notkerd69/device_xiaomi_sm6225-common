@@ -323,6 +323,18 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_VENDOR_OVERRIDES += \
     ro.incremental.enable=yes
 
+#INTERNET: improve download/upload performance
+PRODUCT_PROPERTY_OVERRIDES += \
+    net.tcp.buffersize.default=4096,87380,256960,4096, 16384,256960 \
+    net.tcp.buffersize.wifi=4096,87380,256960,4096,163 84,256960 \
+    net.tcp.buffersize.umts=4096,87380,256960,4096,163 84,256960 \
+    net.tcp.buffersize.gprs=4096,87380,256960,4096,163 84,256960 \
+    net.tcp.buffersize.edge=4096,87380,256960,4096,163 84,256960 \
+    net.rmnet0.dns1=8.8.8.8 \
+    net.rmnet0.dns2=8.8.4.4 \
+    net.dns1=1.1.1.1\
+    net.dns2=9.9.9.9
+
 # Inherit several Android Go Configurations(Beneficial for everyone, even on non-Go devices)
 PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
 PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/config/boot-image-profile.txt
