@@ -413,6 +413,53 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
+# Properties to improve rendering
+PRODUCT_SYSTEM_PROPERTIES += \
+    debug.composition.type=gpu \
+    debug.cpurend.vsync=false \
+    debug.enable.sglscale=1 \
+    debug.enabletr=true \
+    debug.egl.profiler=1 \
+    debug.egl.hw=1 \
+    debug.enabletr=true \
+    debug.overlayui.enable=1 \
+    debug.performance.tuning=1 \
+    debug.qctwa.preservebuf=1 \
+    debug.sf.hw=1 \
+    debug.sf.disable_hwc=0 \
+    debug.sf.recomputecrop=0 \
+    debug.sf.disable_client_composition_cache=1 \
+    debug.sf.latch_unsignaled=0 \
+    dev.pm.dyn_samplingrate=1 \
+    hw3d.force=1 \
+    persist.hwc.ptor.enable=true \
+    persist.sys.composition.type=gpu \
+    ro.fb.mode=1 \
+    video.accelerate.hw=1 \
+    debug.hwui.renderer=skiagl \
+    renderthread.skia.reduceopstasksplitting=true \
+    debug.renderengine.backend=skiaglthreaded \
+    debug.hwui.skia_atrace_enabled=false \
+    ro.vendor.perf.scroll_opt=true \
+    ro.hwui.render_ahead=1
+
+#Properties to improve gaming experiance
+PRODUCT_SYSTEM_PROPERTIES += \
+    persist.sys.NV_FPSLIMIT=60 \
+    persist.sys.NV_POWERMODE=1 \
+    persist.sys.NV_PROFVER=15 \
+    persist.sys.NV_STEREOCTRL=0 \
+    persist.sys.NV_STEREOSEPCHG=0 \
+    persist.sys.NV_STEREOSEP=20 \
+    persist.sys.purgeable_assets=1 \
+    ro.media.dec.jpeg.memcap=8000000 \
+    ro.media.enc.hprof.vid.bps=8000000 \
+    ro.media.dec.aud.wma.enabled=1 \
+    ro.media.dec.vid.wmv.enabled=1 \
+    ro.media.cam.preview.fps=0 \
+    ro.media.codec_priority_for_thumb=so \
+    debug.egl.force_msaa=1
+
 # Rootdir / Init files
 PRODUCT_PACKAGES += \
     init.goodix.events.sh \
