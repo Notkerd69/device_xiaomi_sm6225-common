@@ -534,11 +534,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.sdha_apps_bg_min=8
 	
 # Iorapd
-PRODUCT_SYSTEM_PROPERTIES += \
-    ro.iorapd.enable=false \
-    iorapd.perfetto.enable=false \
-    iorapd.readahead.enable=false \
-    persist.device_config.runtime_native_boot.iorap_readahead_enable=false
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.device_config.runtime_native_boot.iorap_perfetto_enable=true
 
 # Clean logs
 PRODUCT_SYSTEM_PROPERTIES += \
