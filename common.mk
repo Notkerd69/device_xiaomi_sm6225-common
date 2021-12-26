@@ -527,6 +527,10 @@ TARGET_COMMON_QTI_COMPONENTS += \
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.qcomsysd.enabled=1
 
+# Printk
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.console.silent.config=1
+
 # Radio
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
     ro.telephony.block_binder_thread_on_incoming_calls=false
