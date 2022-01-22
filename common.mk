@@ -187,6 +187,13 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_PACKAGES += \
     XiaomiParts
 
+# PocketMode
+PRODUCT_PACKAGES += \
+    PocketMode
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/pocket/privapp-permissions-pocketmode.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-pocketmode.xml
+
 PRODUCT_VENDOR_PROPERTIES += \
     ro.audio.soundfx.dirac=true \
     persist.audio.dirac.speaker=true \
