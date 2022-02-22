@@ -273,9 +273,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.vulkan.deqp.level-2020-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level.xml
 
 PRODUCT_VENDOR_PROPERTIES += \
-    debug.sf.hw=0 \
-    debug.egl.hw=0 \
-    debug.mdpcomp.logs=0 \
     debug.sdm.support_writeback=0 \
     ro.hardware.egl=adreno \
     ro.hardware.vulkan=adreno \
