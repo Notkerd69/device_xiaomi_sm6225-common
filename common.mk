@@ -209,6 +209,18 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.dirac.acs.storeSettings=1 \
     persist.dirac.acs.ignore_error=1
 
+# Dexopt (try not to use big cores during dexopt)
+PRODUCT_PRODUCT_PROPERTIES += \
+    dalvik.vm.boot-dex2oat-threads=4 \
+    dalvik.vm.dex2oat-threads=4 \
+    dalvik.vm.image-dex2oat-threads=4 \
+    dalvik.vm.image-dex2oat-filter=speed \
+    pm.dexopt.first-boot=quicken \
+    pm.dexopt.bg-dexopt=everything \
+    pm.dexopt.boot=verify \
+    pm.dexopt.install=speed-profile \
+    ro.vendor.qti.am.reschedule_service=true
+
 # Display
 TARGET_USE_QCOM_OFFSET := true
 
