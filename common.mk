@@ -404,6 +404,10 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 # Kernel
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 
+# Keyguard
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.wm.enable_remote_keyguard_animation=0
+
 # Keylayout
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/keylayout/,$(TARGET_COPY_OUT_VENDOR)/usr/keylayout)
