@@ -473,6 +473,9 @@ PRODUCT_SYSTEM_PROPERTIES += \
     persist.sys.binary_xml=false
 
 # Thermal
+PRODUCT_PACKAGES += \
+    android.hardware.thermal@2.0-service.qti
+
 PRODUCT_VENDOR_PROPERTIES += \
     vendor.sys.thermal.data.path=/data/vendor/thermal/
 
