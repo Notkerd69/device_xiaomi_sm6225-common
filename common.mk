@@ -101,6 +101,9 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.audio.soundtrigger.xatx.vop.level=10 \
     ro.vendor.audio.soundtrigger=sva
 
+# AudioFX
+TARGET_EXCLUDES_AUDIOFX := true
+
 # Bluetooth
 TARGET_USE_QTI_BT_STACK := false
 
