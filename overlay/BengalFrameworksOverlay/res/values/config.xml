@@ -389,4 +389,7 @@
     For this time after the screen turns on, the Power Manager 
     will not debounce light sensor readings -->
     <integer name="config_lightSensorWarmupTime">200</integer>
+
+    <!-- Whether to cancel fingerprint operation if not idle -->
+    <bool name="config_fpCancelIfNotIdle">true</bool>
 </resources>
