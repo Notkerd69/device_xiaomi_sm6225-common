@@ -122,7 +122,8 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
     persist.vendor.btstack.enable.swbpm=true \
     persist.vendor.service.bdroid.soc.alwayson=true \
     ro.bluetooth.emb_wp_mode=false \
-    ro.bluetooth.wipower=false
+    ro.bluetooth.wipower=false \
+	persist.vendor.service.bdroid.sibs=false
 
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
     persist.vendor.btstack.enable.lpa=true \
@@ -213,11 +214,16 @@ PRODUCT_SYSTEM_PROPERTIES += \
     ro.sf.force_hwc_brightness=1
 
 PRODUCT_VENDOR_PROPERTIES += \
-    debug.sf.disable_backpressure=1 \
+	debug.hwui.use_hint_manager=true \
+    debug.hwui.target_cpu_time_percent=20 \
+    ro.hwui.render_ahead=20 \
     ro.vendor.display.sensortype=2 \
     vendor.display.idle_time=0 \
     vendor.display.idle_time_inactive=0 \
-    vendor.display.qdcm.mode_combine=2
+    vendor.display.qdcm.mode_combine=1 \
+    vendor.display.enable_force_split=1 \
+    debug.sf.enable_transaction_tracing=false \
+    debug.sf.disable_client_composition_cache=1
 
 # DPM
 PRODUCT_VENDOR_PROPERTIES += \
@@ -267,9 +273,78 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.vulkan.deqp.level-2020-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level.xml
 
 PRODUCT_VENDOR_PROPERTIES += \
-   ro.hardware.egl=adreno \
-   ro.hardware.vulkan=adreno \
-   ro.opengles.version=196610
+    debug.sf.hw=0 \
+    debug.egl.hw=0 \
+    debug.mdpcomp.logs=0 \
+    debug.sdm.support_writeback=0 \
+    ro.hardware.egl=adreno \
+    ro.hardware.vulkan=adreno \
+    ro.opengles.version=196610 \
+    ro.qualcomm.cabl=0 \
+    debug.cpurend.vsync=false \
+    debug.sf.gpu_comp_tiling=1 \
+    debug.sf.enable_egl_image_tracker=1 \
+    debug.sf.recomputecrop=0 \
+    debug.hwui.renderer=skiagl \
+    debug.sf.auto_latch_unsignaled=true \
+    debug.renderengine.backend=skiaglthreaded \
+    debug.sf.disable_client_composition_cache=1 \
+    debug.sf.enable_advanced_sf_phase_offset=1 \
+    debug.sf.high_fps_early_gl_phase_offset_ns=-5000000 \
+    debug.sf.high_fps_early_phase_offset_ns=-5000000 \
+    debug.sf.high_fps_late_app_phase_offset_ns=1000000 \
+    debug.sf.high_fps_late_sf_phase_offset_ns=-5000000 \
+    debug.sf.predict_hwc_composition_strategy=0 \
+    debug.sf.treat_170m_as_sRGB=1 \
+    persist.metadata_dynfps.disable=true \
+    persist.sys.sf.color_saturation=1.0 \
+    persist.sys.sf.native_mode=0 \
+    ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
+    ro.surface_flinger.has_HDR_display=true \
+    ro.surface_flinger.has_wide_color_display=true \
+    ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
+    ro.surface_flinger.max_virtual_display_dimension=4096 \
+    ro.surface_flinger.protected_contents=true \
+    ro.surface_flinger.set_idle_timer_ms=4000 \
+    ro.surface_flinger.set_touch_timer_ms=4000 \
+    ro.surface_flinger.set_display_power_timer_ms=1000 \
+    ro.surface_flinger.use_color_management=true \
+    ro.surface_flinger.use_content_detection_for_refresh_rate=true \
+    ro.surface_flinger.refresh_rate_switching=true \
+    ro.surface_flinger.vsync_event_phase_offset_ns=2000000 \
+    ro.surface_flinger.vsync_sf_event_phase_offset_ns=1000000 \
+    ro.surface_flinger.wcg_composition_dataspace=143261696 \
+    ro.vendor.display.type=oled \
+    vendor.display.camera_noc_efficiency_factor=0.70 \
+    vendor.display.comp_mask=0 \
+    vendor.display.disable_excl_rect=0 \
+    vendor.display.disable_excl_rect_partial_fb=1 \
+    vendor.display.disable_idle_time_hdr=1 \
+    vendor.display.disable_idle_time_video=1 \
+    vendor.display.disable_rotator_downscale=1 \
+    vendor.display.disable_rotator_ubwc=1 \
+    vendor.display.disable_rounded_corner_thread=1 \
+    vendor.display.disable_scaler=0 \
+    vendor.display.enable_allow_idle_fallback=1 \
+    vendor.display.enable_async_powermode=1 \
+    vendor.display.enable_camera_smooth=1 \
+    vendor.display.enable_optimize_refresh=1 \
+    vendor.display.enable_perf_hint_large_comp_cycle=1 \
+    vendor.display.enable_posted_start_dyn=1 \
+    vendor.display.enable_rc_support=1 \
+    vendor.display.enable_rounded_corner=0 \
+    vendor.display.qdcm.disable_factory_mode=1 \
+    vendor.display.normal_noc_efficiency_factor=0.85 \
+    vendor.display.secure_preview_buffer_format=420_sp \
+    vendor.gralloc.disable_ubwc=0 \
+    vendor.gralloc.secure_preview_buffer_format=420_sp \
+    renderthread.skia.reduceopstasksplitting=true \
+    persist.sys.dalvik.hyperthreading=true \
+    persist.sys.dalvik.multithread=true \
+    dalvik.vm.systemuicompilerfilter=speed \
+    suspend.short_suspend_threshold_millis=2000 \
+    suspend.short_suspend_backoff_enabled=true \
+    suspend.max_sleep_time_millis=40000
 
 # GPS
 LOC_HIDL_VERSION := 4.0
@@ -368,6 +443,111 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/perf/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf \
     $(LOCAL_PATH)/configs/perf/perfboostsconfig.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perfboostsconfig.xml \
     $(LOCAL_PATH)/configs/perf/perfconfigstore.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perfconfigstore.xml
+
+# Pirformans
+PRODUCT_SYSTEM_PROPERTIES += \
+    debug.gralloc.enable_fb_ubwc=1 \
+    debug.sf.latch_unsignaled=0 \
+    debug.sf.enable_hwc_vds=1 \
+    debug.enable.sglscale=0 \
+    vendor.gralloc.enable_fb_ubwc=1 \
+    vendor.display.enable_default_color_mode=1 \
+    persist.demo.hdmirotationlock=false \
+    persist.hwc.mdpcomp.enable=true \
+    sys.disable_ext_animation=1 \
+    persist.sys.ui.hw=1 \
+    ro.config.avoid_gfx_accel=true \
+    debug.composition.type=c2d \
+    debug.kill_allocating_task=0 \
+    debug.hwui.render_dirty_regions=false \
+    ro.vendor.qti.am.reschedule_service=true \
+    persist.vendor.mwqem.enable=1 \
+    vendor.gralloc.disable_ahardware_buffer=1 \
+    vendor.display.use_smooth_motion=1 \
+    debug.gralloc.gfx_ubwc_disable=0 \
+    dev.pm.dyn_samplingrate=1 \
+    ro.vendor.qti.sys.fw.bservice_enable=true \
+    persist.bg.dexopt.enable=true \
+    sdm.debug.rotator_disable_ubwc=1 \
+
+# HWUI Props
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.hwui.texture_cache_size=72 \
+    ro.hwui.layer_cache_size=48 \
+    ro.hwui.r_buffer_cache_size=8 \
+    ro.hwui.path_cache_size=32 \
+    ro.hwui.gradient_cache_size=1 \
+    ro.hwui.drop_shadow_cache_size=6 \
+    ro.hwui.texture_cache_flushrate=0.4 \
+    ro.hwui.text_small_cache_width=1024 \
+    ro.hwui.text_small_cache_height=1024 \
+    ro.hwui.text_large_cache_width=2048 \
+    ro.hwui.text_large_cache_height=2048 \
+
+# Battery Saving
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.vold.umsdirtyratio=20 \
+    ro.ril.disable.power.collapse=0 \
+    power.saving.mode=1 \
+    pm.sleep_mode=1 \
+    wifi.supplicant_scan_interval=350
+
+# Increase scroll smoothness
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.qti.cgroup_follow.enable=true \
+    persist.vendor.qti.inputopts.enable=true \
+    persist.vendor.qti.inputopts.movetouchslop=0.6 \
+    ro.qcom.adreno.qgl.ShaderStorageImageExtendedFormats=0
+
+# Increase RAM managment
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.fha_enable=true \
+    ro.sys.fw.bg_apps_limit=32 \
+    ro.config.dha_cached_max=16 \
+    ro.config.dha_empty_max=42 \
+    ro.config.dha_empty_init=32 \
+    ro.config.dha_lmk_scale=0.545 \
+    ro.config.dha_th_rate=2.3 \
+    ro.config.sdha_apps_bg_max=64 \
+    ro.config.sdha_apps_bg_min=8
+	
+# Iorapd
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.iorapd.enable=false \
+    iorapd.perfetto.enable=false \
+    iorapd.readahead.enable=false \
+    persist.device_config.runtime_native_boot.iorap_readahead_enable=false
+
+# Clean logs
+PRODUCT_SYSTEM_PROPERTIES += \
+    persist.log.tag.AnalyticsService=S \
+    persist.log.tag.KernelCpuUidActiveTimeReader=S \
+    persist.log.tag.Tracer=S \
+    persist.log.tag.NearbySharing=S \
+    persist.log.tag.IntervalStats=S \
+    persist.log.tag.CompatibilityChangeReporter=S \
+    persist.log.tag.SQLiteLog=S \
+    persist.log.tag.wificond=S \
+    persist.log.tag.b/223498680=S \
+    persist.log.tag.TrafficStats=S \
+    persist.log.tag.ContrastColorUtil=S
+	
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    sys.use_fifo_ui=1 \
+    ro.min_pointer_dur=4 \
+    ro.min.fling_velocity=8000 \
+    ro.max.fling_velocity=12000 \
+    ro.sf.compbypass.enable=1 \
+    persist.sys.lgospd.enable=0 \
+    persist.sys.pcsync.enable=0 \
+    persist.sys.scrollingcache=5 \
+    debug.performance.tuning=1 \
+    persist.sys.use_dithering=0 \
+    sys.ui.hw=1 \
+    windowsmgr.max_events_per_sec=300 \
+    persist.sys.window_animation_scale=0 \
+    persist.sys.transition_animation_scale=0 \
+    persist.sys.animation_scale=0
 
 # Public libraries
 PRODUCT_COPY_FILES += \
