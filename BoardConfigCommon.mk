@@ -87,7 +87,6 @@ BOARD_KERNEL_OFFSET      := 0x00008000
 BOARD_KERNEL_PAGESIZE    := 4096
 BOARD_RAMDISK_OFFSET     := 0x01000000
 BOARD_TAGS_OFFSET        := 0x00000100
-
 BOARD_KERNEL_CMDLINE += \
     androidboot.console=ttyMSM0 \
     androidboot.fstab_suffix=qcom \
@@ -107,6 +106,7 @@ BOARD_KERNEL_CMDLINE += \
 BOARD_BOOT_HEADER_VERSION := 3
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
+BOARD_RAMDISK_USE_LZ4 := true
 
 TARGET_FORCE_PREBUILT_KERNEL := true # kernel images defined on specific device tree
 TARGET_KERNEL_ARCH := arm64
