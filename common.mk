@@ -325,7 +325,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.dbg.wfc_avail_ovr=1
 
 # Incremental FS
-PRODUCT_VENDOR_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
     ro.incremental.enable=yes
 
 # IORapd
@@ -336,7 +336,7 @@ PRODUCT_SYSTEM_PROPERTIES += \
     persist.device_config.runtime_native_boot.iorap_readahead_enable=false
 
 #INTERNET: improve download/upload performance
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_SYSTEM_PROPERTIES += \
     net.tcp.buffersize.default=4096,87380,256960,4096, 16384,256960 \
     net.tcp.buffersize.wifi=4096,87380,256960,4096,163 84,256960 \
     net.tcp.buffersize.umts=4096,87380,256960,4096,163 84,256960 \
@@ -384,6 +384,22 @@ PRODUCT_SYSTEM_PROPERTIES += \
     ro.lmk.swap_util_max=90 \
     ro.lmk.thrashing_limit=30 \
     ro.lmk.thrashing_limit_decay=50
+
+# Logs
+PRODUCT_SYSTEM_PROPERTIES += \
+    persist.log.tag.AnalyticsService=S \
+    persist.log.tag.KernelCpuUidActiveTimeReader=S \
+    persist.log.tag.Tracer=S \
+    persist.log.tag.NearbySharing=S \
+    persist.log.tag.IntervalStats=S \
+    persist.log.tag.CompatibilityChangeReporter=S \
+    persist.log.tag.SQLiteLog=S \
+    persist.log.tag.wificond=S \
+    persist.log.tag.b/223498680=S \
+    persist.log.tag.TrafficStats=S \
+    persist.log.tag.ContrastColorUtil=S \
+    persist.log.tag.GoogleTagManager=S
+
 
 # Media
 PRODUCT_ODM_PROPERTIES += \
@@ -646,7 +662,7 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
     config.disable_rtt=true
 
 # WiFi Scan Interval (default = 15s)
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_SYSTEM_PROPERTIES += \
     wifi.supplicant_scan_interval=600
 
 # WLAN
