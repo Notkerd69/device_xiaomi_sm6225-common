@@ -258,6 +258,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SYSTEM_PROPERTIES += \
     sys.fp.miui.token=0
 
+# Fling Velocity
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.sys.scrollingcache=0 \
+    ro.min.fling_velocity=70 \
+    ro.max.fling_velocity=21000
+
 # FM
 BOARD_HAVE_QCOM_FM := true
 
