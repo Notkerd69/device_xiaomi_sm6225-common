@@ -381,4 +381,7 @@
      <item>com.google.android.gms/.chimera.GmsIntentOperationService$PersistentTrustedReceiver</item>
      <item>com.google.android.gms/.stats.service.DropBoxEntryAddedReceiver</item>
     </string-array>
+
+    <!-- Whether the new Auto Selection Network UI should be shown -->
+    <bool name="config_enableNewAutoSelectNetworkUI">true</bool>
 </resources>
