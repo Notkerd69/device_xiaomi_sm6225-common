@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #Audio
 persist.audio.button_jack.profile=volume
 persist.audio.button_jack.switch=0
@@ -41,6 +40,7 @@ persist.vendor.qcom.bluetooth.scram.enabled=false
 persist.vendor.qcom.bluetooth.soc=cherokee
 persist.vendor.qcom.bluetooth.twsp_state.enabled=false
 ro.vendor.bluetooth.wipower=false
+vendor.hw.fm.init=0
 
 #Camera
 camera.disable_zsl_mode=1
