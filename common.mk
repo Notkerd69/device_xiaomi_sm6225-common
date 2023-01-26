@@ -152,6 +152,10 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-impl-qti.recovery \
     android.hardware.boot@1.2-service
 
+# Brightness Curve
+PRODUCT_SYSTEM_PROPERTIES += \
+persist.sys.brightness.low.gamma=true
+
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
