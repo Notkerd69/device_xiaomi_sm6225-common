@@ -338,6 +338,7 @@ PRODUCT_PACKAGES += \
     BengalFrameworksOverlay \
     BengalSettingsOverlay \
     BengalSystemUIOverlay \
+	SimpleDeviceConfigSM6225 \
     BengalWifiOverlay
 
 # Perf
