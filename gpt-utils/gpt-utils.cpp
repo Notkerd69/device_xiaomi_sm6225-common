@@ -157,18 +157,11 @@ static int blk_rw(int fd, int rw, int64_t offset, uint8_t *buf, unsigned len)
     else
         r = read(fd, buf, len);
 
-    if (r < 0) {
+    if (r < 0)
         fprintf(stderr, "block dev %s failed: %s\n", rw ? "write" : "read",
                 strerror(errno));
-    } else {
-        if (rw) {
-            r = fsync(fd);
-            if (r < 0)
-                fprintf(stderr, "fsync failed: %s\n", strerror(errno));
-        } else {
-            r = 0;
-        }
-    }
+    else
+        r = 0;
 
     return r;
 }
@@ -1381,7 +1374,7 @@ int gpt_disk_get_disk_info(const char *dev, struct gpt_disk *dsk)
                                 dev);
                 goto error;
         }
-        fd = open(disk->devpath, O_RDWR | O_DSYNC);
+        fd = open(disk->devpath, O_RDWR);
         if (fd < 0) {
                 ALOGE("%s: Failed to open %s: %s",
                                 __func__,
