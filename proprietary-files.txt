@@ -379,8 +379,6 @@ vendor/etc/media_profiles_khaje_v0.xml|58917f6e19a5262400685d46e94a3b8be427b5bb
 vendor/etc/media_profiles_V1_0.xml|2da4310e65720a36ee8422228959795f467f102e
 vendor/etc/media_profiles.xml|981dd4a7ffb9020aa1142930ff3ae6d07bda12aa
 vendor/etc/media_khaje_v0/video_system_specs.json|5ebbea81f823c55455acf8a8103d10f2de31e006
-vendor/lib/libmediautils_vendor.so|f169ccb3636b4e3434fbf51d28ee527ed8e0f224
-vendor/lib64/libmediautils_vendor.so|6651767353914df66885561960e82981ddf2a290
 vendor/lib64/libmmosal_vendor.so|37472d26710773415f0a331d5e7c5f85dcdd164d
 
 # PD - from LA.UM.9.15.2.r1-06000-KAMORTA.QSSI-13.0
