@@ -344,7 +344,8 @@ PRODUCT_VENDOR_PROPERTIES += \
     dalvik.vm.systemuicompilerfilter=speed \
     suspend.short_suspend_threshold_millis=2000 \
     suspend.short_suspend_backoff_enabled=true \
-    suspend.max_sleep_time_millis=40000
+    suspend.max_sleep_time_millis=40000 \
+    ro.apk_verity.mode=2
 
 # GPS
 LOC_HIDL_VERSION := 4.0
