@@ -365,10 +365,11 @@ PRODUCT_PACKAGES += \
     BengalFrameworksOverlay \
     BengalSettingsOverlay \
     BengalSystemUIOverlay \
-	SimpleDeviceConfigSM6225 \
+    SimpleDeviceConfigSM6225 \
     BengalWifiOverlay \
-	NotchBarKiller \
-    SettingsLibSM6225
+    NotchBarKiller \
+    SettingsLibSM6225 \
+    BengalSettingsProviderOverlay
 
 # Perf
 PRODUCT_COPY_FILES += \
