@@ -354,14 +354,14 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
-    AOSPABengalFrameworksOverlay \
     BengalCarrierConfigOverlay \
     BengalFrameworksOverlay \
     BengalSettingsOverlay \
     BengalSystemUIOverlay \
 	SimpleDeviceConfigSM6225 \
     BengalWifiOverlay \
-	NotchBarKiller
+	NotchBarKiller \
+    SettingsLibSM6225
 
 # Perf
 PRODUCT_COPY_FILES += \
