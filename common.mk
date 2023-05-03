@@ -549,7 +549,8 @@ PRODUCT_SYSTEM_PROPERTIES += \
     persist.log.tag.wificond=S \
     persist.log.tag.b/223498680=S \
     persist.log.tag.TrafficStats=S \
-    persist.log.tag.ContrastColorUtil=S
+    persist.log.tag.ContrastColorUtil=S \
+    persist.log.tag.GoogleTagManager=S
 	
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     sys.use_fifo_ui=1 \
