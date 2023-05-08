@@ -317,9 +317,13 @@ PRODUCT_COPY_FILES += \
 
 # LMK
 PRODUCT_SYSTEM_PROPERTIES += \
-    ro.lmk.filecache_min_kb=153600 \
-    ro.lmk.kill_timeout_ms=50 \
-    ro.lmk.stall_limit_critical=40
+    ro.lmk.kill_timeout_ms=15 \
+    ro.lmk.use_minfree_levels=true \
+    ro.lmk.psi_complete_stall_ms=70 \
+    ro.lmk.swap_free_low_percentage=20 \
+    ro.lmk.swap_util_max=90 \
+    ro.lmk.thrashing_limit=30 \
+    ro.lmk.thrashing_limit_decay=50
 
 # Media
 PRODUCT_ODM_PROPERTIES += \
