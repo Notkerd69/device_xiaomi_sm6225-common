@@ -187,9 +187,6 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_PACKAGES += \
     XiaomiParts
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/parts/privapp-permissions-parts.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-parts.xml
-
 PRODUCT_VENDOR_PROPERTIES += \
     ro.audio.soundfx.dirac=true \
     persist.audio.dirac.speaker=true \
