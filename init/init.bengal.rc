@@ -62,8 +62,8 @@ on charger
     write /sys/devices/system/cpu/cpu6/online 0
     write /sys/devices/system/cpu/cpu7/online 0
 
-on property:ro.boot.hwversion=*
-    setprop vendor.boot.hwversion ${ro.boot.hwversion}
+on property:ro.boot.hwname=*
+    setprop ro.boot.product.hardware.sku ${ro.boot.hwname}
 
 on property:persist.vendor.hvdcp_opti.start=1
     chown root system /sys/class/power_supply/bms/soh
