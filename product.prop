@@ -1,0 +1,17 @@
+# Bluetooth
+bluetooth.hardware.power.idle_cur_ma=7
+bluetooth.hardware.power.operating_voltage_mv=3700
+bluetooth.hardware.power.rx_cur_ma=75
+bluetooth.hardware.power.tx_cur_ma=93
+
+#Charger
+persist.vendor.quick.charge=1
+ro.charger.disable_init_blank=true
+
+# Iorapd
+persist.device_config.runtime_native_boot.iorap_perfetto_enable=true
+
+# Fling Velocity
+persist.sys.scrollingcache=0
+ro.min.fling_velocity=70
+ro.max.fling_velocity=21000

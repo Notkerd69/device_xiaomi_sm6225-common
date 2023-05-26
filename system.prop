@@ -1,0 +1,166 @@
+# Bluetooth
+vendor.bluetooth.soc=cherokee
+
+# Brightness
+ro.sf.force_hwc_brightness=1
+persist.sys.brightness.low.gamma=true
+
+# Battery Saving
+ro.vendor.use_data_netmgrd=true 
+ro.vold.umsdirtyratio=20 
+ro.ril.disable.power.collapse=0 
+power.saving.mode=1
+pm.sleep_mode=1
+ro.ril.power_collapse=1
+power_supply.wakeup=true
+ro.config.hw_fast_dormancy=1
+ro.config.hw_power_saving=1
+
+# Camera
+camera.disable_zsl_mode=true
+log.tag.CHIUSECASE=ERROR
+persist.vendor.camera.privapp.list=org.codeaurora.snapcam,com.android.camera,com.google.camera
+sys.cameratest.cameralevel=1
+vendor.camera.aux.packagelist=com.android.camera,app.grapheneos.camera,org.lineageos.aperture,org.lineageos.aperture.dev
+vendor.camera.aux.packagelist.ext=org.codeaurora.snapcam,com.android.camera,com.google.camera
+vendor.camera.aux.packageexcludelist=org.telegram.messenger,com.microsoft.teams,com.discord,us.zoom.videomeetings
+
+# Fingerprint
+sys.fp.miui.token=0
+
+# Improve download/upload performance
+net.tcp.buffersize.default=4096,87380,256960,4096, 16384,256960
+net.tcp.buffersize.wifi=4096,87380,256960,4096,163 84,256960
+net.tcp.buffersize.umts=4096,87380,256960,4096,163 84,256960
+net.tcp.buffersize.gprs=4096,87380,256960,4096,163 84,256960
+net.tcp.buffersize.edge=4096,87380,256960,4096,163 84,256960
+net.rmnet0.dns1=8.8.8.8
+net.rmnet0.dns2=8.8.4.4
+net.dns1=1.1.1.1
+net.dns2=9.9.9.9
+
+# Increase scroll smoothness
+ro.vendor.qti.cgroup_follow.enable=true
+persist.vendor.qti.inputopts.enable=true
+persist.vendor.qti.inputopts.movetouchslop=0.6
+ro.qcom.adreno.qgl.ShaderStorageImageExtendedFormats=0
+
+# Increase RAM managment
+ro.config.fha_enable=true
+ro.sys.fw.bg_apps_limit=32
+ro.config.dha_cached_max=16
+ro.config.dha_empty_max=42
+ro.config.dha_empty_init=32
+ro.config.dha_lmk_scale=0.545
+ro.config.dha_th_rate=2.3
+ro.config.sdha_apps_bg_max=64
+ro.config.sdha_apps_bg_min=8
+
+# LMK
+ro.lmk.kill_timeout_ms=15
+ro.lmk.use_minfree_levels=true
+ro.lmk.psi_complete_stall_ms=70
+ro.lmk.swap_free_low_percentage=20
+ro.lmk.swap_util_max=90
+ro.lmk.thrashing_limit=30
+ro.lmk.thrashing_limit_decay=50
+
+# Logs
+persist.log.tag.AnalyticsService=S
+persist.log.tag.KernelCpuUidActiveTimeReader=S
+persist.log.tag.Tracer=S
+persist.log.tag.NearbySharing=S
+persist.log.tag.IntervalStats=S
+persist.log.tag.CompatibilityChangeReporter=S
+persist.log.tag.SQLiteLog=S
+persist.log.tag.wificond=S
+persist.log.tag.b/223498680=S
+persist.log.tag.TrafficStats=S
+persist.log.tag.ContrastColorUtil=S
+persist.log.tag.GoogleTagManager=S	
+	
+# Netflix
+ro.netflix.channel=004ee050-1a17-11e9-bb61-6f1da27fb55b
+ro.netflix.signup=1
+	
+# Properties to improve rendering
+debug.cpurend.vsync=false
+debug.enable.sglscale=1
+debug.enabletr=true
+debug.overlayui.enable=1
+debug.performance.tuning=1
+debug.qctwa.preservebuf=1
+debug.sf.disable_hwc=0
+debug.sf.recomputecrop=0
+debug.sf.disable_client_composition_cache=1
+debug.sf.latch_unsignaled=0
+dev.pm.dyn_samplingrate=1
+hw3d.force=1
+persist.hwc.ptor.enable=true
+persist.sys.composition.type=c2d
+ro.fb.mode=1
+video.accelerate.hw=1
+debug.hwui.renderer=skiagl
+renderthread.skia.reduceopstasksplitting=true
+debug.renderengine.backend=skiaglthreaded
+debug.hwui.skia_atrace_enabled=false
+ro.vendor.perf.scroll_opt=true
+debug.gralloc.enable_fb_ubwc=1
+debug.sf.enable_hwc_vds=1
+vendor.gralloc.enable_fb_ubwc=1
+vendor.display.enable_default_color_mode=1
+persist.demo.hdmirotationlock=false
+persist.hwc.mdpcomp.enable=true
+sys.disable_ext_animation=1
+persist.sys.ui.hw=1
+ro.config.avoid_gfx_accel=true
+debug.composition.type=gpu
+debug.kill_allocating_task=0
+debug.hwui.render_dirty_regions=false
+ro.vendor.qti.am.reschedule_service=true
+persist.vendor.mwqem.enable=1
+vendor.gralloc.disable_ahardware_buffer=1
+vendor.display.use_smooth_motion=1
+debug.gralloc.gfx_ubwc_disable=0
+ro.vendor.qti.sys.fw.bservice_enable=true
+persist.bg.dexopt.enable=true
+sdm.debug.rotator_disable_ubwc=1
+ro.product.gpu.driver=1
+config.disable_rtt=true
+
+# Properties to improve in game experience
+persist.sys.NV_FPSLIMIT=60
+persist.sys.NV_POWERMODE=1
+persist.sys.NV_PROFVER=15
+persist.sys.NV_STEREOCTRL=0
+persist.sys.NV_STEREOSEPCHG=0
+persist.sys.NV_STEREOSEP=20
+persist.sys.purgeable_assets=1
+ro.media.dec.jpeg.memcap=8000000
+ro.media.enc.hprof.vid.bps=8000000
+ro.media.dec.aud.wma.enabled=1
+ro.media.dec.vid.wmv.enabled=1
+ro.media.cam.preview.fps=0
+ro.media.codec_priority_for_thumb=so
+debug.egl.force_msaa=1
+
+# Shutdown
+ro.build.shutdown_timeout=2
+	
+# Storage.xml moment
+persist.sys.binary_xml=false
+	
+# WiFi Scan Interval (default = 15s)
+wifi.supplicant_scan_interval=600
+
+# Volume Steps
+ro.config.vc_call_vol_steps=11
+
+# ZRAM writeback
+ro.zram.mark_idle_delay_mins=60
+ro.zram.first_wb_delay_mins=1440
+ro.zram.periodic_wb_delay_hours=24
+
+# Zygote
+zygote.critical_window.minute=10
+persist.device_config.runtime_native.usap_pool_enabled=true

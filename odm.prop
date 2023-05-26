@@ -1,0 +1,8 @@
+# Audio
+vendor.audio.feature.dynamic_ecns.enable=false
+vendor.audio.hw.aac.encoder=false
+vendor.audio.offload.buffer.size.kb=256
+	
+# Media
+media.settings.xml=/vendor/etc/media_profiles_khaje.xml
+vendor.mm.enable.qcom_parser=63963135
