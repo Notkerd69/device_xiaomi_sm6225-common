@@ -15,3 +15,9 @@ persist.device_config.runtime_native_boot.iorap_perfetto_enable=true
 persist.sys.scrollingcache=0
 ro.min.fling_velocity=70
 ro.max.fling_velocity=21000
+
+# Google Photos
+debug.photos.eraser_camo=1
+debug.photos.eraser_suggestion=1
+debug.photos.force_pixel_eol=1
+debug.photos.p_editr.eraser=1
