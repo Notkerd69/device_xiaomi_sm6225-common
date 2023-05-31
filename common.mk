@@ -245,6 +245,7 @@ TARGET_COMMON_QTI_COMPONENTS += \
     gps \
     init \
     keymaster \
+    media \
     overlay \
     perf \
     telephony \
