@@ -501,6 +501,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Zygote
 PRODUCT_SYSTEM_PROPERTIES += \
+    ro.zygote.disable_gl_preload=false \
     zygote.critical_window.minute=10
 
 # Inherit from vendor
